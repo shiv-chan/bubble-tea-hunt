@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubble Tea Hunt</title>
+  <script src="https://kit.fontawesome.com/33e91fc437.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <header class="landing">
+    <h1>🌟🦄 Bubble Tea Hunt🦄🌟</h1>
+    <h2>Find bubble tea places everywhere!</h2>
+    <div class="input-area">
+      <div class="search">
+        <label for="search-input">Search Location:</label>
+        <input type="text" id="search-input" placeholder="e.g. Vancouver, BC">
+        <button type="submit">Search</button>
+      </div>
+      <div class="sort">
+        <label for="sort">Sort by:</label>
+        <select name="sort" id="sort">
+          <option selected>Select option</option>
+          <option value="rating">Rating</option>
+          <option value="review-count">Review Count</option>
+          <option value="distance">Distance</option>
+        </select>
+      </div>
+      <button class="mapBtn"><i class="fas fa-map-marked-alt"></i> Check on Map</button>
+    </div>
+    <div>Icons made by <a href="" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div id="map"></div>
+  </header>
+  <div hidden id="spinner"></div>
+  <div class="loop-wrap">
+    <div class="image-wrap1">
+      <img src="https://images.unsplash.com/photo-1525803377221-4f6ccdaa5133?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fGJvYmF8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="boba-glass">
+      <img src="https://images.unsplash.com/photo-1561668501-5d2643ab4531?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8Ym9iYXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="chatime">
+      <img src="https://images.pexels.com/photos/4071422/pexels-photo-4071422.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="boba-pour">
+    </div>
+    <div class="image-wrap2">
+      <img src="https://favy-tokyo.s3.amazonaws.com/uploads/topic_item/image/605822/retina_01.jpg" alt="chunshuitang">
+      <img src="https://images.unsplash.com/photo-1613019435367-6adf98fb2e44?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8Ym9iYXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="xingfutang">
+      <img src="https://images.pexels.com/photos/6413654/pexels-photo-6413654.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="boba-smile">
+    </div>
+  </div>
+  <div class="container">
+  </div>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>

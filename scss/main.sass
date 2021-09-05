@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Poppins:wght@100;300;400;700&display=swap')
+
+$title-font: 'Carter One', cursive
+$text-font: 'Poppins', sans-serif
+$open-color: #16c79a
+$close-color: #e00543
+
+@mixin flex ($direction: row)
+  display: flex
+  flex-direction: $direction
+  justify-content: center
+  align-items: center
+  
+* 
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  @include flex (column)
+
+  h1, h2
+    text-align: center
+  
+  header > h1
+    margin-top: 2rem
+    font-size: 50px
+
+  header
+    font-family: $title-font
+  
+  .input-area
+    @include flex (column)
+    margin-top: 2rem
+    align-items: flex-start
+    
+  .search
+    @include flex
+
+    *
+      margin-right: 1rem
+      font-family: inherit
+
+    label
+      font-size: 20px
+    
+    input
+      outline: none
+      border: none
+      border-bottom: 1px solid
+      font-size: 20px
+      line-height: 25px
+      text-align: center
+
+    button
+      text-transform: uppercase
+      outline: none
+      font-size: 16px
+      padding: 0 1rem
+      border-radius: 15px
+      border: 3px solid transparent
+      background-image: linear-gradient(to right, #fff, #fff), linear-gradient(to right, #12c2e9, #c471ed, #f64f59)
+      background-origin: border-box
+      background-clip: padding-box, border-box
+      cursor: pointer
+      transition: background-image 0.3s ease
+
+      &:hover, &:active, &:focus
+        background-image: linear-gradient(to right, #12c2e9, #c471ed, #f64f59), linear-gradient(to right, #12c2e9, #c471ed, #f64f59)
+        
+  .sort
+    margin-top: 1rem
+    font-family: $title-font
+    font-size: 20px
+
+    & > *
+      font-family: $title-font
+
+    select
+      border-radius: 5px
+
+  .mapBtn
+    display: block
+    margin-top: 1rem
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59)
+    background-clip: text
+    -webkit-background-clip: text
+    color: transparent
+    font-size: 20px
+    font-family: $title-font
+    border: none
+    cursor: pointer
+
+    &:visited
+      color: inherit
+
+//map
+#map
+  display: none
+  width: 100%
+  height: 600px
+  font-family: $title-font
+
+  *
+    font-family: $title-font
+
+  a
+    text-decoration: none
+    color: #000
+    &:visited
+      color: #000
+
+  h1
+    font-family: $text-font
+    font-size: 20px
+
+  p
+    font-family: $text-font
+
+
+//spinner
+#spinner:not([hidden])
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  display: flex
+  justify-content: center
+  align-items: center
+
+  &::after
+    content: ""
+    width: 80px
+    height: 80px
+    border: 2px solid #f3f3f3
+    border-top: 3px solid #f25a41
+    border-radius: 100%
+    will-change: transform
+    animation: spin 1s infinite linear
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+
+//loop-wrap
+.loop-wrap
+  @include flex
+  justify-content: flex-end
+  width: 100vw
+  height: 600px
+  overflow: hidden
+  margin: 3rem 0
+
+  .image-wrap1, .image-wrap2
+    @include flex
+    width: auto
+    height: 100%
+
+  .image-wrap1
+    animation: loop 50s linear infinite
+
+  .image-wrap2
+    animation: loop2 50s -25s linear infinite
+
+  img
+    width: 600px
+    height: 100%
+    object-fit: cover
+
+
+@keyframes loop
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(200%)
+
+@keyframes loop2
+  0%
+    transform: translateX(-100%)
+  100%
+    transform: translateX(100%)
+
+//cards
+.card:nth-child(4n+1)
+  background-color: #ffd5e5
+
+.card:nth-child(4n+2)
+  background-color: #ffffdd
+
+.card:nth-child(4n+3)
+  background-color: #a0ffe6
+
+.card:nth-child(4n+4)
+  background-color: #81f5ff
+
+
+.card
+  display: grid
+  grid-template-columns: repeat(2, 50%)
+  grid-auto-rows: 400px
+  width: 80vw
+  max-width: 800px
+  margin: 2rem auto
+  border-radius: 15px
+  overflow: hidden
+  text-decoration: none
+  cursor: pointer
+
+  &:link, &:visited, &:hover, &:active
+    color: #000
+
+  .image
+    background-size: cover 
+    background-position: center
+
+.description
+  color: #000
+  font-family: $text-font
+  padding: 1rem 2rem
+  
+  h1
+    text-align: left
+    font-family: inherit
+
+  div
+    font-weight: bold
+    
+    p
+      margin-bottom: 0.25rem
+
+    p:nth-of-type(1)
+      display: inline-block
+      margin-right: 1.5rem
+      margin-bottom: 0.75rem
+      background-color: #16c79a
+      border-radius: 25px
+      padding: 2px 15px
+      color: #fff
+  
+  ul
+    list-style-type: none
+    margin-top: 2rem
+
+  li
+    margin-bottom: 0.5rem
+  
+  a
+    font-weight: bold
+    color: #000
+
+    &:visited
+      color: #000
+
+
+.card:nth-child(1)
+  margin-top: 4rem
